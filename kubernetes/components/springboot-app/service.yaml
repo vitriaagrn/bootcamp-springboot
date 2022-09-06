@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-app
+  labels:
+    app: springboot
+    tier: backend
+    env: dev
+spec:
+  selector:
+    app: springboot
+    tier: backend
+    env: dev
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
