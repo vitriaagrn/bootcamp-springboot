@@ -1,0 +1,25 @@
+version: '3.9'
+volumes:
+  pg_data: {}
+networks:
+  native_cloud: {}
+services:
+  postgres:
+    image: postgres:14.2
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    ports:
+      - 1234:5432
+    volumes:
+      - pg_data:/var/lib/postgresql
+    networks:
+      - native_cloud
+  backend:
+    image: dimmaryanto93/springboot-app:v2
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8080:8080
+    networks:
+      - native_cloud
