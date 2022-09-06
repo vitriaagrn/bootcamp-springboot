@@ -16,6 +16,8 @@ services:
       - native_cloud
   backend:
     image: dimmaryanto93/springboot-app:v2
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
     build: 
       dockerfile: Dockerfile
       context: .
