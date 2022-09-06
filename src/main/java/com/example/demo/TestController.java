@@ -11,7 +11,7 @@ public class TestController {
 
     @GetMapping(value = "/test", produces = MediaType.TEXT_PLAIN_VALUE)
     public String test(){
-        return "Hai nama saya Dimas maryanto";
+        return "Hai nama saya Dimas maryanto v3";
     }
 
 }
