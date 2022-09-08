@@ -1,0 +1,15 @@
+GET localhost:8080/api/example/list
+
+### get list
+
+POST localhost:8080/api/example/save
+Content-Type: application/json
+
+{
+  "namaLengkap": "Dimas Maryanto",
+  "saldo": "2000"
+}
+
+### save data
+
+GET localhost:8080/api/example/a284adb8-94fc-441f-8653-c1cc308189e4
