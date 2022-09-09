@@ -33,3 +33,14 @@ build:jar:
   extends: .build-jar
   only:
     - /-release/
+
+build:docker:
+  stage: build
+  extends: .build-docker
+  variables:
+    DOCKER_BUILD_ARGS_ENTRIPOINT: "--build-arg JAR_FILE=$JAR_FILE"
+  needs:
+    - build:jar
+    - get-fact:project:info
+  only:
+    - /-release/
