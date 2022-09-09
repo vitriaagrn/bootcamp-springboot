@@ -44,3 +44,14 @@ build:docker:
     - get-fact:project:info
   only:
     - /-release/
+
+trigger:review:
+  extends: .trigger_pipeline
+  variables:
+    CI_DEFAULT_TRIGGER_BRANCH: main
+  stage: deploy
+  needs:
+    - get-fact:project:info
+    - build:docker
+  only:
+    - /-release/
