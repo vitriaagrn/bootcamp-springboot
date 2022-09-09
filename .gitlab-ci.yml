@@ -48,7 +48,7 @@ build:docker:
 trigger:review:
   extends: .trigger_pipeline
   variables:
-    CI_DEFAULT_TRIGGER_BRANCH: main
+    CI_DEFAULT_TRIGGER_BRANCH: master
   stage: deploy
   needs:
     - get-fact:project:info
